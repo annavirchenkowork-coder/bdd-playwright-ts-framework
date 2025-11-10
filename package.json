@@ -1,0 +1,31 @@
+{
+  "name": "sep-automation-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js",
+    "test:tag": "npx cucumber-js --tags @sep11",
+    "test:smoke": "npx cucumber-js --tags @smoke",
+    "Mac-open:report": "open reports/cucumber-report.html",
+    "Windows-open:report": "start reports/cucumber-report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "The Self Enrollment Portal System is designed to facilitate a secure and efficient checkout experience for customers purchasing products or services online. This system encompasses features such as product selection, personal details entry, payment plan selection, terms and conditions agreement, and payment processing.",
+  "dependencies": {
+    "@types/cucumber": "^7.0.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

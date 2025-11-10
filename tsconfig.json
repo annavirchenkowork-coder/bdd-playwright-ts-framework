@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "types": ["node"]
+  },
+  "include": [
+    "features/**/*.ts",
+    "steps/**/*.ts",
+    "hooks/**/*.ts",
+    "pages/**/*.ts",
+    "utilities/**/*.ts",
+    "globalPagesSetup.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
