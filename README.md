@@ -1,142 +1,159 @@
-# SEP Automation Framework
+# 🧩 BDD Playwright TypeScript Framework
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)
+![Playwright](https://img.shields.io/badge/Playwright-1.56.1-2EAD33?logo=playwright)
+![CucumberJS](https://img.shields.io/badge/CucumberJS-12.2.0-23D96C?logo=cucumber)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js)
+![ESLint](https://img.shields.io/badge/ESLint-Configured-4B32C3?logo=eslint)
+![Prettier](https://img.shields.io/badge/Code_Style-Prettier-F7B93E?logo=prettier)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
 
-The Self Enrollment Portal System is designed to facilitate a secure and efficient checkout experience for customers purchasing products or services online. This system encompasses features such as product selection, personal details entry, payment plan selection, terms and conditions agreement, and payment processing.
 
-## Table of Contents
+**The BDD Playwright TypeScript Framework** is a modular, end-to-end **test automation project** built to validate a secure and seamless **Self-Enrollment Portal (SEP)** checkout experience.  
+This upgraded version is powered by **TypeScript**, ensuring type safety, cleaner IntelliSense, and maintainable code for large-scale automation projects.
+
+It covers the full user journey — from product selection and personal data entry to payment plan configuration, terms agreement, and final payment — ensuring accuracy and stability across user flows.
+
+---
+
+## 📚 Table of Contents
 1. [Prerequisites](#Prerequisites)
 2. [Environment Setup](#environment-setup)
 3. [Framework Structure and Usage](#framework-structure-and-usage)
 4. [Project and Git Workflow](#project-and-git-workflow)<br>
 
-## Prerequisites
+## ⚙️ Prerequisites
 
-Before you begin, ensure you have the following installed on your system:
-- Node.js (v18 or higher)
-- npm (v6 or higher), which comes with Node.js
-- Visual Studio Code
-- Git
-- Playwright Test
-- cucumber (v10 or higher)
-- ts-node (v10 or higher)
-- types node (v20 or higher)
-- types cucumber (v7 or higher)
-- typescript (v5 or higher)
+Before running this project, ensure the following tools are installed:
 
-To install necessary libraries, open your terminal and run:
+- **Node.js** ≥ v18  
+- **npm** ≥ v6 (comes with Node)
+- **Git**
+- **Visual Studio Code** (recommended IDE)
+- **Playwright browsers** (installed automatically)
+
+## 💻 Environment Setup
+This project is fully set up and ready to run. To explore or test it on your own device:
+
+### 1. Clone the Repository
 ```sh
-npm install @playwright/test @cucumber/cucumber typescript ts-node @types/node @types/cucumber
-```
-<br>
-
-## Environment Setup
-
-### 1. Download the "sep-automation" Project Zip Folder
-1.1 Go to your LMS (CYDEO Learning APP)  
-1.2 Navigate to the "JavaScript and Playwright" course on your LMS  
-1.3 Expand the "Project Implementation" module  
-1.4 Click the "sep-automation" folder and download it
-
-### 2. Unzip the Downloaded Folder
-Unzip the downloaded folder and move it to your "VS Code Projects" folder.
-
-### 3. Open the Folder in VS Code
-3.1 Open the VS Code App  
-3.2 Go to `File` and click `Open Folder`  
-3.3 Select the "sep-automation" folder under the VS Code Projects
-
-### 4. Install VS Code Extensions
-Install the following extensions for a better development experience:
-- Better Comments
-- Cucumber (Gherkin) Full Support
-- Material Icon Theme
-- NPM
-- npm Intellisense
-- NPM Run
-- Playwright Snippets
-- Tabnine
-
-### 5. Add Environment Variables to User Settings Json File (settings.json) in VS Code
-5.1 Go to your LMS (CYDEO Learning APP).<br>
-5.2 Navigate to the "JavaScript and Playwright" course on your LMS.<br>
-5.3 Expand the "Project Implementation" module.<br>
-5.4 Download the "Environment Variables" text file.<br>
-5.5 Open the Environment Variables.txt file.<br>
-5.6 Add the credentials & [test card](https://docs.stripe.com/testing) info to the settings.json file of VS Code user settings as environment variables<br>
-
-### 6. Run the "test:tag" Script
-Go to the package.json file and run the "test:tag" script to verify the setup.<br>
-
-## Framework Structure and Usage
-
-### 1. The `features` folder
-This folder is used for storing the feature files, each feature file has a unique tag name which can be used to run specific feature in `package.json` file
-
-### 2. The `hooks` Folder
-This folder contains the globalHooks for cucumber step definitions.<br> It also has the playwright utility for page & browser
-
-### 3. The `pages` Folder
-This folder is used for storing webelements of the pages.<br>
-BasePage must be the parent class of all the page classes.<br>
-Every single page class must be added and initialized in the `globalPagesSetup.js` to be able to locate elements of each pages by using same page fixture of playwright
-
-### 4. The `steps` Folder
-This folder is used for storing the step definitions of the features.<br>
-The file names of the steps should match with its feature file's name.<br>
-
-### 5. `cucumber.cjs` File
-A CommonJS configuration file for CucumberJS, managing settings for BDD-style automated tests. It includes paths for step definitions, support files, plugins, and output formatting options, allowing customization of test execution.
-
-### 6. `package.json` File
-The `package.json` file for the "sep-automation" project includes several key sections:
-
-- **`name`**: Identifies the project as "sep-automation".
-- **`version`**: Marks the current version at "1.0.0".
-- **`main`**: Points to the main entry file of the project, "index.js".
-- **`scripts`**: Defines custom scripts for the project.
-- **`dependencies`**: Lists project dependencies, including Cucumber, Playwright for testing, and dotenv for environment variable management.
-
-This setup facilitates BDD-style testing with CucumberJS and Playwright, and includes cross-platform support for viewing test reports.<br>
-
-## Project and Git Workflow
-
-### 1. Upload the "sep-automation" Project to GitHub
-Create a new repository on GitHub and upload the project.
-### 2. Create a "develop" Branch
-Create a branch named develop in your GitHub repository.
-### 3. Create Feature Branches
-Create separate branches for each feature from the develop branch. Use the following naming convention for feature branches: feature/tagname_feature_name.
-Example: If the tag name of login.feature is @sep01, then the feature branch name should be feature/sep01-login.
-Note: You must create a unique feature branch for every feature file before you work on them.
-### 4. Update the Project
-Update your local repository:
-```sh
-git fetch
-git pull
+git clone https://github.com/<your-username>/bdd-playwright-framework.git
 ```
 
-### 5. Checkout the Specific Feature Branch
-Checkout the specific feature branch you need to work on:
+### 2. Open the Project in Your IDE
+Navigate to the cloned folder and open it in **VS Code** or your preferred IDE.
+
+### 3. Install Dependencies
 ```sh
-git checkout feature/branch_name
+npm install
 ```
-Double-check the checked-out branch. The bottom left corner of VS Code shows the current branch.
 
-### 6. Work on the Feature File
-Work on the feature file of the branch you checked out.
+### 4. Configure Environment Variables
+This framework uses sample credentials to run end-to-end tests on the demo environment.
 
-### 7. Commit and Push Changes
-After fully completing and testing the feature file, commit and push your changes with descriptive commit messages:
+If you’d like to run the tests locally, create a `.env` file in the project root with the following content:
+```
+SEP_QA_URL = https://qa.sep.tdtm.cydeo.com/taws
+SEP_USERNAME = automation-user
+SEP_PASSWORD = 123abc
+
+CARD_NUMBER = 4242424242424242
+EXPIRATION_DATE = 12/28
+CVC = 368
+ZIP_CODE = 22102
+```
+
+⚠️ These are demo credentials for the public test environment. No personal or sensitive data is involved.
+
+The framework uses the dotenv package to load these variables securely into your local environment.
+
+### 5. Run the Tests
+To execute all BDD scenarios:
+```sh
+npm test
+```
+To execute tests by specific tag or suite:
+```sh
+npm run test:tag
+```
+
+### 6. View the HTML Report
+After execution:
+```sh
+npm run Mac-open:report
+```
+or on Windows:
+```sh
+npm run Windows-open:report
+```
+The report will be available under /reports and can be opened directly in your browser.
+
+## 🧩 Framework Structure and Usage
+
+### 🗂️ 1. `features` Folder
+Holds all **Gherkin feature files.**
+Each file has a unique tag, allowing specific scenarios to be executed via package.json scripts.
+
+### 🪝 2. `hooks` Folder
+Contains **Cucumber global** hooks and Playwright utilities for page and browser lifecycle management.
+
+### 📄 3. `pages` Folder
+Stores **Page Object Model (POM)** classes and web element locators.
+Every page class should inherit from BasePage and be registered inside globalPagesSetup.js to maintain consistent page access across Playwright fixtures.
+
+### 🧭 4. `steps` Folder
+Includes all **step definitions** for the corresponding feature files.<br>
+Each file’s name should match its feature file for better traceability.<br>
+
+### ⚙️ 5. `cucumber.cjs` File
+Configuration file for **CucumberJS**, specifying paths for steps, support files, formatters, and report output — enabling flexible BDD-style test execution.
+
+### 📦 6. `package.json` File
+Defines essential project metadata and dependencies:
+
+- **`Project name`**:  bdd-playwright-framework
+- **`Version`**: Marks the current version at "1.0.0"
+- **`Entry point`**: Points to the main entry file of the project, "index.js"
+- **`Scripts`**: Custom npm commands for test execution and report generation
+- **`Dependencies`**: Playwright, Cucumber, dotenv, and reporting libraries
+- **`Type`**: Specifies the module system, set to "module" for ES Module support
+
+This configuration powers seamless integration between CucumberJS and Playwright, supporting readable BDD test flows and HTML report generation.<br>
+
+## 🌱 Project and Git Workflow
+This project follows a clean and collaborative branching model:
+### 1. Clone the repo
+```sh
+git clone https://github.com/<your-username>/bdd-playwright-framework.git
+```
+### 2. Create a new branch (for enhancements, fixes, or new tests)
+```sh
+git checkout -b feature/your-feature-name
+```
+### 3. Commit your changes
 ```sh
 git add .
-git commit -m "Descriptive commit message"
-git push
+git commit -m "Add new feature test for payment flow"
 ```
 
-Note: This will push to the remote feature branch.
-### 8. Create a Pull Request
-Create a pull request from your remote feature branch to the develop branch.
-### 9. Repeat Steps
-Repeat from step #3 until you finish all the user stories. By following these steps, you will be able to set up, work on, and manage your library automation project efficiently. Happy coding!<br>
+### 4. Push to GitHub
+```sh
+git push origin feature/your-feature-name
+```
 
-## Authors
-Muhtar - [Muhtar](https://github.com/MuhtarMahmut)
+### 5. Open a Pull Request
+Submit a PR to the develop branch once your feature or fix is ready for review.
+
+##
+🧠 Highlights of TypeScript Upgrade
+- 🔐 **Strict typing** — fewer runtime errors and safer refactors
+- ⚡ **Faster debugging** — IntelliSense across steps and pages
+- 🧩 **Reusable interfaces** for page objects and data models
+- 🧱 **Cleaner architecture** — supports scalable, multi-module test suites
+- 🧾 **Improved maintainability** with clear type inference
+
+## ✅ Final Note
+This repository demonstrates a **robust, scalable, and type-safe BDD testing framework** powered by **Playwright, CucumberJS, and TypeScript.**
+It embodies best practices in automation design, from modular POM patterns to Git hygiene and reporting clarity.
+
+Run it, explore it, extend it — and enjoy smooth, behavior-driven testing 🚀
