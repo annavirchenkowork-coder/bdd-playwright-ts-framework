@@ -1,4 +1,5 @@
 # 🧩 BDD Playwright TypeScript Framework
+### 🧠 A Type-safe BDD Automation Framework for modern web testing — powered by Playwright, CucumberJS, and TypeScript.<br>
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)
 ![Playwright](https://img.shields.io/badge/Playwright-1.56.1-2EAD33?logo=playwright)
 ![CucumberJS](https://img.shields.io/badge/CucumberJS-12.2.0-23D96C?logo=cucumber)

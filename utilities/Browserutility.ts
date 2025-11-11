@@ -5,9 +5,6 @@ import { Locator, Page } from "playwright";
  * BrowserUtility class provides utility methods for common browser interactions
  */
 export class BrowserUtility {
-
-    // ADD YOUR OWN BROWSER UTILITY METHODS HERE...
-
   /**
    * Checks a checkbox or radio button and verifies it's checked
    * @param locator - The Playwright Locator for the element

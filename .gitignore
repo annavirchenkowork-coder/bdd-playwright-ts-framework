@@ -1,6 +1,39 @@
+# Node modules
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-reports
+
+# TypeScript build outputs
+dist/
+build/
+
+# Playwright outputs
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Cucumber & reporting
+reports/
+reports/**/*.html
+reports/**/*.json
+
+# Environment & config
+.env
+.env.local
+.env.test
+
+# System & editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary / cache files
+.tmp/
+.cache/
