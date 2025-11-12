@@ -9,10 +9,10 @@ export interface PriceData {
   active: boolean;
   baseAmount: number;
   type: string;
-  upfrontDiscount: boolean;
-  upfrontDiscountAmount: number;
-  allowCoupons: boolean;
-  couponDiscount: number;
+  upfrontDiscount?: boolean;
+  upfrontDiscountAmount?: number;
+  allowCoupons?: boolean;
+  couponDiscount?: number;
   numberOfInstallments?: number | null;
 }
 
@@ -33,10 +33,10 @@ export class Price {
     this.active = data.active;
     this.baseAmount = data.baseAmount;
     this.type = data.type;
-    this.upfrontDiscount = data.upfrontDiscount;
-    this.upfrontDiscountAmount = data.upfrontDiscountAmount;
-    this.allowCoupons = data.allowCoupons;
-    this.couponDiscount = data.couponDiscount;
+    this.upfrontDiscount = data.upfrontDiscount ?? false;
+    this.upfrontDiscountAmount = data.upfrontDiscountAmount ?? 0;
+    this.allowCoupons = data.allowCoupons ?? false;
+    this.couponDiscount = data.couponDiscount ?? 0;
     this.numberOfInstallments =
       data.numberOfInstallments !== undefined
         ? data.numberOfInstallments
@@ -103,9 +103,19 @@ export class Product {
  * Extend this if your JSON grows.
  */
 export interface QAData {
+  available: string;        
+  teen: string;             
+  type: string;             
+  productName: string;
+  productId: string;
+  programId: number;
+  programCode: string;
+  programName: string;
   startDate: string;
   refundDate: string;
-  products?: ProductData[];
+  externalUrl: string;
+  terms: string;
+  prices: PriceData[];
 }
 
 // --- Load Program Data from JSON ---
