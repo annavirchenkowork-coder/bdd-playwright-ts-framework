@@ -1,18 +1,22 @@
 @sep23
-Feature: Make a payment
+Feature: Make a payment with a valid card
 
-    As a customer, I should be able to make payments so I can enroll in the program.
+    As a user, I want to successfully complete my payment
+    so that my enrollment is confirmed.
 
-    #* AC1: When the user enters valid card information, checks the terms and conditions checkbox, 
-    #*      and clicks on the Pay button, then they should be redirected to the confirmation page.
+    Background:
+        Given User proceeds to the Review Payment page
 
-    #* AC2: In the stepper, steps 1, 2, 3 should be green.
-    #* AC3: The correct program name should be displayed.
-    #* AC4: The correct user email should be displayed.
-    #* AC5: The correct company contact information should be displayed.
-
-
-    #TODO: Create scenarios that cover all the acceptance criteria
+    @sep23-1
+    Scenario: Successful payment with a valid test card
+        When User enters a valid card number
+        And User enters a valid expiration date
+        And User enters a valid Security Code
+        And User enters a valid ZIP code
+        And User checks the Terms and Conditions checkbox
+        And User clicks the Pay button
+        Then The payment confirmation message should be displayed
+        And The stepper should show all steps completed
 
 
 
