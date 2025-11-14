@@ -7,7 +7,6 @@ module.exports = {
     format: [
       "progress-bar",
       "json:reports/cucumber-report.json",
-      // add html formatter later if you install one
     ],
     formatOptions: {
       snippetInterface: "async-await",

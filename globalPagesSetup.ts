@@ -21,6 +21,4 @@ export const initElements = (argPage: Page): void => {
   paymentPlanPage = new PaymentPlanPage(page);
   startApplicationPage = new StartApplicationPage(page);
   reviewPaymentPage = new ReviewPaymentPage(page);
-
-  // Add other page initializations here as needed
 };

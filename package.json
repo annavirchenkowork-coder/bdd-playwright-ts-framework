@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cucumber-js",
-    "test:tag": "npx cucumber-js --tags @sep11",
+    "test:tag": "npx cucumber-js --tags @tagNum",
     "test:smoke": "npx cucumber-js --tags @smoke",
     "Mac-open:report": "open reports/cucumber-report.html",
     "Windows-open:report": "start reports/cucumber-report.html"
@@ -14,6 +14,7 @@
   "license": "ISC",
   "description": "The Self Enrollment Portal System is designed to facilitate a secure and efficient checkout experience for customers purchasing products or services online. This system encompasses features such as product selection, personal details entry, payment plan selection, terms and conditions agreement, and payment processing.",
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@types/cucumber": "^7.0.0"
   },
   "devDependencies": {

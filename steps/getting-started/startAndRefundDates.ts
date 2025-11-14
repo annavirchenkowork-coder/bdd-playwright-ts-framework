@@ -1,25 +1,58 @@
-import { Given, Then, When } from "@cucumber/cucumber";
-import { expect} from "@playwright/test";
-import { startApplicationPage, page } from "../../globalPagesSetup";
-import { productInfo } from "../../utilities/qa-data-reader";
+import { Then } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+import { startApplicationPage } from '../../globalPagesSetup';
+import { productInfo } from '../../utilities/qa-data-reader';
+import { BrowserUtility } from '../../utilities/Browserutility';
+import { CustomWorld } from '../../hooks/globalHooks';
 
+/* ========== AC1: elements visible ========== */
 
-Then('the program start date is displayed', async function () {
+/**
+ * Verifies the Program Start Date element is visible on Step 1.
+ */
+Then(
+  'The Program Start Date is visible',
+  async function (this: CustomWorld): Promise<void> {
     await expect(startApplicationPage.programStartDate).toBeVisible();
-});
+  }
+);
 
-Then('the program refund date is displayed', async function () {
+/**
+ * Verifies the Refund End Date element is visible on Step 1.
+ */
+Then(
+  'The Refund End Date is visible',
+  async function (this: CustomWorld): Promise<void> {
     await expect(startApplicationPage.refundEndDate).toBeVisible();
-});
+  }
+);
 
-Then('the displayed start date for the program is correct', async function () {
-    const ACTUAL_START_DATE = await startApplicationPage.programStartDate.innerText();
-    const EXPECTED_START_DATE = productInfo.startDate;
-    expect(ACTUAL_START_DATE).toBe(EXPECTED_START_DATE);
-});
+/* ========== AC2: values match expected test data ========== */
 
-Then('the displayed refund date for the program is correct', async function () {
-    const ACTUAL_REFUND_DATE = await startApplicationPage.refundEndDate.innerText();
-    const EXPECTED_REFUND_DATE = productInfo.refundDate;
-    expect(ACTUAL_REFUND_DATE).toBe(EXPECTED_REFUND_DATE);
-});
+/**
+ * Asserts the Program Start Date text matches the expected value from test data.
+ */
+Then(
+  'The Program Start Date matches the expected value',
+  async function (this: CustomWorld): Promise<void> {
+    const actual = await BrowserUtility.cleanText(
+      startApplicationPage.programStartDate
+    );
+    const expected = String(productInfo.startDate).trim();
+    expect(actual).toBe(expected);
+  }
+);
+
+/**
+ * Asserts the Refund End Date text matches the expected value from test data.
+ */
+Then(
+  'The Refund End Date matches the expected value',
+  async function (this: CustomWorld): Promise<void> {
+    const actual = await BrowserUtility.cleanText(
+      startApplicationPage.refundEndDate
+    );
+    const expected = String(productInfo.refundDate).trim();
+    expect(actual).toBe(expected);
+  }
+);
